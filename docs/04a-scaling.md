@@ -18,7 +18,7 @@ http://autoscale-go.default.gdg.coda.digital/?sleep=100&prime=10000&bloat=50
 
 Run a simple simple load test using
 ```shell
-    hey -z 30s -c 50 \
+    hey -z 10s -c 50 \
      "http://autoscale-go.default.gdg.coda.digital/?sleep=100&prime=10000&bloat=50"
 ```
 Watch the Pods scaling up and down automatically
