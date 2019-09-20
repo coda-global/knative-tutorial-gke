@@ -25,7 +25,7 @@ kubectl logs -f event-display-<deployment-suffix> -c user-container
 
 
 ## Pub/Sub source
-## Enable Google Pub/Sub
+### Enable Google Pub/Sub
 Reference: https://knative.dev/docs/eventing/samples/gcp-pubsub-source/
 
 ```shell
