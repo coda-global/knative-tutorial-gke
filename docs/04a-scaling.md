@@ -1,6 +1,7 @@
 # Knative autoscaling
 
 Reference: 
+
 https://knative.dev/docs/serving/configuring-the-autoscaler/
 
 https://knative.dev/docs/serving/samples/autoscale-go/index.html
