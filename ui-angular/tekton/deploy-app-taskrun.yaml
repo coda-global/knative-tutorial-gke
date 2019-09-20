@@ -1,0 +1,20 @@
+apiVersion: tekton.dev/v1alpha1
+kind: TaskRun
+metadata:
+  name: deploy-ui-angular-app
+spec:
+  taskRef:
+    name: deploy-ui-angular-using-kubectl
+  inputs:
+    resources:
+      - name: ui-angular-git-source
+        resourceRef:
+          name: ui-angular-git
+    params:
+      - name: pathToYamlFile
+        value: "ui-angular/service.yaml"
+      - name: imageUrl
+        value: asia.gcr.io/my-knative-project-101/ui-angular
+      - name: imageTag
+        value: "latest"
+  serviceAccount: pipeline-account

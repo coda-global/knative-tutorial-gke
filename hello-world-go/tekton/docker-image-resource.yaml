@@ -1,0 +1,9 @@
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: helloworld-image
+spec:
+  type: image
+  params:
+    - name: url
+      value: asia.gcr.io/my-knative-project-101/hello-world-knative

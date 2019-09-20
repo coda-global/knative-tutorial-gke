@@ -1,0 +1,20 @@
+apiVersion: tekton.dev/v1alpha1
+kind: TaskRun
+metadata:
+  name: deploy-app
+spec:
+  taskRef:
+    name: deploy-using-kubectl
+  inputs:
+    resources:
+      - name: git-source
+        resourceRef:
+          name: helloworld-git
+    params:
+      - name: pathToYamlFile
+        value: "hello-world/service.yaml"
+      - name: imageUrl
+        value: asia.gcr.io/my-knative-project-101/hello-world-knative
+      - name: imageTag
+        value: "latest"
+  serviceAccount: pipeline-account

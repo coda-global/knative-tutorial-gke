@@ -1,0 +1,34 @@
+
+
+<div class="login-wrapper">
+    <h3>Login</h3>
+    <br>
+    <form [formGroup]="loginForm" (ngSubmit)="doLogin()">
+    <div class="bx--form-item" >
+        <label for="text-input-3" class="bx--label">Enter your Name</label>
+        <input id="text-input-3" formControlName="name" type="text" class="bx--text-input" placeholder="Your name here" >
+
+        <div data-loading class="bx--loading bx--loading--small loading-po" *ngIf="showLoading">
+            <svg class="bx--loading__svg" viewBox="-75 -75 150 150">
+                <title>Loading</title>
+                <circle class="bx--loading__background" cx="0" cy="0" r="37.5" />
+                <circle class="bx--loading__stroke" cx="0" cy="0" r="37.5" />
+            </svg>
+        </div>
+        
+        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                <div *ngIf="f.name.errors.required">Name is required</div>
+        </div>
+
+        <div *ngIf="serviceError" class="invalid-feedback">
+                <div>Something unexpected happened. Please try again.</div>
+        </div>
+        
+    </div>    
+    <br>
+    <div class="bx--form-item">
+        <button class="bx--btn bx--btn--primary" type="button" (click)="doLogin();">Login</button>
+    </div>
+    </form>
+
+</div>

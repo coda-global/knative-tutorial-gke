@@ -1,0 +1,93 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~carbon-components/scss/globals/scss/styles.scss";
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.pad-0{
+    padding: 0;
+}
+
+.login-wrapper{
+    max-width: 350px;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.messaging-wrapper{
+    max-width: 100%;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 50px;
+    height: calc(100vh - 200px);
+    overflow-y: scroll;
+    padding: 30px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.invalid-feedback{
+    font-size: 12px;
+    color: #be0606;
+}
+.loading-po{
+    position: absolute;
+    right: 0;
+    margin-top: 30px;;
+}
+
+.active-users{
+    right: 20px;
+    top: 15px;
+    position: absolute;
+    color: #fff;
+    z-index: 6001;
+    font-weight: bold;
+}
+
+.btn-send{
+    position: absolute;
+    right: 0;
+    bottom: 0px;
+    padding: 12px !important;
+    width: 8em;
+    /* text-align: left; */
+    justify-content: center;
+}
+
+.p-r{
+    position: relative;
+    textarea{
+        padding-right: 18%;
+    }
+}
+
+.w-100{
+    width:100% !important;
+}
+
+.content-box{
+    position: fixed;
+    left: 0;
+    bottom: 0px;
+    width: 100%;
+}
+
+.bx--inline-notification {
+    max-width: 100% !important;
+}
+
+.sentiment-analysis{
+    width: 18px;
+}
+
+.bx--inline-notification{
+    border-left-width: 6px !important;
+    min-width: inherit !important;
+}
+
+.ps-input{
+    padding-right: 25%;
+    min-height: 3rem;
+}

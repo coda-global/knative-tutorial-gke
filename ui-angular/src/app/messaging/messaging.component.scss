@@ -1,0 +1,35 @@
+.bx--inline-notification__close-button{
+    color:#fff;
+    font-size: 10px;
+    text-align: center;
+    padding-right: 5px;
+}
+
+.m-c{
+    margin: 0 auto;
+}
+
+.t-c{
+    text-align: center;
+    font-size: 14px;
+}
+
+.s-wrapper{
+    align-items: center;
+    display: flex;
+    padding-right: 8px;
+}
+
+.loading-poo{
+    margin: 0 auto;
+}
+
+.loading-wrapper{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    height: 3rem;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.85)
+}

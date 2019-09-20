@@ -1,0 +1,72 @@
+<a class="active-users" *ngIf="countSuccess">
+        <span class="bx--header__name--prefix">Active Users: </span>&nbsp; {{count}}
+      </a>
+     
+<div class="messaging-wrapper" #scrollMe>
+        <div data-loading class="bx--loading bx--loading--small m-c" *ngIf="showLoading">
+            <svg class="bx--loading__svg" viewBox="-75 -75 150 150">
+                <title>Loading</title>
+                <circle class="bx--loading__background" cx="0" cy="0" r="37.5" />
+                <circle class="bx--loading__stroke" cx="0" cy="0" r="37.5" />
+            </svg> 
+        </div>
+        <p class="t-c" *ngIf="!showLoading && messages.length == 0">No Messages Found</p>
+        <div data-notification class="bx--inline-notification bx--inline-notification--success" role="alert" *ngFor="let message of messages; let i = index">
+                <div class="bx--inline-notification__details">
+                    <div class="s-wrapper bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--right bx--tooltip--align-start" *ngIf="message.sentiment >= -1 && message.sentiment < 0">
+                        <span class="bx--assistive-text">Sad</span>
+                        <img src="./assets/angry.png" class="sentiment-analysis">
+                    </div>
+                    <div class="s-wrapper bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--right bx--tooltip--align-start" *ngIf="message.sentiment == 0">
+                        <span class="bx--assistive-text">Neutral</span>
+                        <img src="./assets/confused.png" class="sentiment-analysis">
+                    </div>
+                    <div class="s-wrapper bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--right bx--tooltip--align-start" *ngIf="message.sentiment > 0 && message.sentiment <= 1">
+                        <span class="bx--assistive-text">Happy</span>
+                        <img src="./assets/happy.png" class="sentiment-analysis">
+                    </div>
+                    <div class="s-wrapper bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--right bx--tooltip--align-start" *ngIf="message.sentiment == undefined">
+                        <span class="bx--assistive-text">Loading</span>
+                        <img src="./assets/loading.png" class="sentiment-analysis">
+                    </div>
+                    <div class="bx--inline-notification__text-wrapper">
+                      <p class="bx--inline-notification__title">{{message.userName}}</p>
+                      <div class="bx--inline-notification__subtitle">{{message.message}}</div>
+                    </div>
+                </div>
+                <div data-notification-btn class="bx--inline-notification__close-button" >
+                        {{toDate(message.timestamp._seconds) | timeAgo}}
+                </div>
+         </div>
+
+    </div>
+
+    <div class="content-box">
+        <div class="loading-wrapper" *ngIf="submittedInProgress">
+            <div data-loading class="bx--loading bx--loading--small loading-poo" >
+                    <svg class="bx--loading__svg" viewBox="-75 -75 150 150">
+                        <title>Loading</title>
+                        <circle class="bx--loading__background" cx="0" cy="0" r="37.5" />
+                        <circle class="bx--loading__stroke" cx="0" cy="0" r="37.5" />
+                    </svg>
+                </div>
+            </div>
+        <div class="bx--form-item p-r">
+            <form [formGroup]="messagingForm" class="w-100">
+                <div *ngIf="submitted && f.message.errors" class="invalid-feedback">
+                    <div *ngIf="f.message.errors.required">Message is a required field</div>
+                </div>
+        
+                <div *ngIf="serviceError" class="invalid-feedback">
+                    <div>Something unexpected happened. Please try again.</div>
+                </div>
+                <input id="text-input-3" (keyup.enter)="handleKeyEnter($event)" type="text" formControlName="message" class="bx--text-input ps-input" placeholder="Enter your message here">
+                
+                
+                <button class="bx--btn bx--btn--primary btn-send" type="button" (click)="sendMessage()">
+                    Send
+                </button>
+            </form>
+        </div>
+                
+    </div>

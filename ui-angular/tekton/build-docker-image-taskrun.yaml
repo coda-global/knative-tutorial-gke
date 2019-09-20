@@ -1,0 +1,22 @@
+apiVersion: tekton.dev/v1alpha1
+kind: TaskRun
+metadata:
+  name: build-ui-angular-docker-image-from-git-source-task-run
+spec:
+  taskRef:
+    name: build-ui-angular-docker-image-from-git-source
+  inputs:
+    resources:
+      - name: docker-source
+        resourceRef:
+          name: ui-angular-git
+    params:
+      - name: pathToDockerFile
+        value: Dockerfile
+      - name: pathToContext
+        value: /workspace/docker-source/ui-angular #configure: may change according to your source
+  outputs:
+    resources:
+      - name: builtImage
+        resourceRef:
+          name: ui-angular-image
