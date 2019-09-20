@@ -42,3 +42,5 @@ kubectl apply --selector knative.dev/crd-install=true \
    --filename https://github.com/knative/serving/releases/download/v0.8.0/monitoring.yaml
 ```
 
+## Next
+[Environment Setup](02-setup.md)

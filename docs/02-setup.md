@@ -1,4 +1,4 @@
-# Envrirnment setup
+# Environment setup
 ## Container registry setup
 Reference: https://cloud.google.com/container-registry/docs/quickstart
 ```shell
@@ -21,7 +21,10 @@ kubectl apply -f config-domain.yaml
 ```
 
 ### Configure the DNS record
-Set up wildcard record for the subdomin `default` as the Namespace prefixes the application name
+Set up wildcard record for the sub-domain `default` as the Namespace prefixes the application name
 ```dns
   *.default.<domain>                   59     IN     A   <Ingress IP address>
   ```
+
+## Next
+[Serving Hello World](03-serving-hello-world.md)

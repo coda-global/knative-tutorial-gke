@@ -48,3 +48,6 @@ Verify the application
 curl -X GET \
   http://message-service-nodejs.default.gdg.coda.digital/
 ```
+
+## Next
+[Eventing Hello World](06-eventing-hello-world.md)

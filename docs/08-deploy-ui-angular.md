@@ -1,5 +1,5 @@
 # Angular UI
-Angular with SSR (Server Side Rendering) is used to issultrate the serverless nature of the entire application.
+Angular with SSR (Server Side Rendering) is used to illustrate the serverless nature of the entire application.
 
 ## Build and Deploy application
 ```shell
@@ -10,3 +10,6 @@ kubectl apply -f service.yaml
 ```
 
 Access the application on http://ui.default.gdg.coda.digital
+
+## Next
+[Tekton](09-tekton-pipeline.md)

@@ -42,3 +42,6 @@ kubectl apply -f event-display-service.yaml
 kubectl apply -f gcp-trigger.yaml
 gcloud pubsub topics publish testing --message="Hello world from GCP pub/sub"
 ```
+
+## Next
+[Sentiment Analysis service](07-sentiment-service-and-pubsub.md)

@@ -23,3 +23,6 @@ Watch the Pods scaling up and down automatically
 ```shell
 watch -n 1 "kubectl get po"
 ```
+
+## Next
+[Splitting traffic](04b-traffic-split.md)

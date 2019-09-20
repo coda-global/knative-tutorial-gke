@@ -8,7 +8,7 @@ cd hello-world-go
 docker build -t asia.gcr.io/my-knative-project-101/hello-world-knative:latest .
 ```
 
-Pusing the image to registry
+Pushing the image to registry
 ```shell
 docker push asia.gcr.io/my-knative-project-101/hello-world-knative:latest
 ```
@@ -22,3 +22,6 @@ Get the application route
 ```shell
 kubectl get routes
 ```
+
+## Next
+[Scaling](04a-scaling.md)

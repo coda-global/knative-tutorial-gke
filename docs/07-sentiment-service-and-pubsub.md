@@ -1,5 +1,5 @@
 # Sentiment Analysis service
-This is a Python based service which talks to Google sentiment analysis service to retrive the sentiment of the message posted. The response is store in Google Firestore.
+This is a Python based service which talks to Google sentiment analysis service to retrieve the sentiment of the message posted. The response is store in Google Firestore.
 
 ## Deploy sentiment analysis service
 ```shell
@@ -35,3 +35,6 @@ Now publish message on to the `testing` topic
 ```shell
 gcloud pubsub topics publish testing --message="{\"message\": \"This is fantastic..\",\"id\":\"x\"}"
 ```
+
+## Next
+[Deploy Angular UI](08-deploy-ui-angular.md)
