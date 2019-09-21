@@ -9,10 +9,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .login-wrapper{
-    max-width: 350px;
     position: relative;
     margin: 0 auto;
     margin-top: 50px;
+    max-width: 500px;
+    text-align: center;
 }
 
 .messaging-wrapper{
